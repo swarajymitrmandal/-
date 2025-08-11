@@ -12,10 +12,10 @@
     
     <style>
         :root{
-            --primary:#e65100; /* गडद ऑरेंज */
+            --primary:#e65100;
             --primary-dark:#bf360c;
-            --bg1:#f5f5f5; /* फिकट ग्रे */
-            --bg2:#ffffff; /* पांढरा */
+            --bg1:#f5f5f5;
+            --bg2:#ffffff;
             --card:#ffffff;
             --muted:#616161;
             --radius:10px;
@@ -31,6 +31,16 @@
             line-height:1.6;
         }
 
+        /* ॲनिमेशनचा कोड */
+        @keyframes headerFadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
         /* header */
         header {
             background: linear-gradient(135deg,var(--primary),var(--primary-dark));
@@ -38,6 +48,8 @@
             text-align:center;
             padding:50px 16px;
             position:relative;
+            opacity: 0;
+            animation: headerFadeIn 1s ease-out forwards;
         }
         .logo-wrap{
             max-width:980px;
@@ -55,7 +67,7 @@
             background:white;
             padding:6px;
         }
-        .logo:hover{ transform:scale(1.04) }
+        .logo:hover{ transform:scale(1.08) rotate(-2deg); }
 
         h1{ margin:6px 0 4px; font-family: 'Montserrat', sans-serif; font-size:2.2rem; letter-spacing:0.8px; font-weight:700; }
         h2{ font-family: 'Montserrat', sans-serif; font-weight:700; }
@@ -84,11 +96,11 @@
             font-weight:600;
             padding:8px 12px;
             border-radius:8px;
-            transition: background .18s, transform .18s ease-in-out; /* ॲनिमेशनसाठी ट्रान्झिशन */
+            transition: background .18s, transform .2s ease;
         }
         .nav-inner a:hover{ 
             background:rgba(255,255,255,0.15);
-            transform: scale(1.05); /* बटणांसाठी ॲनिमेशन */
+            transform: scale(1.1); 
         }
 
         /* container */
@@ -108,10 +120,9 @@
             gap:20px;
             align-items:center;
             margin-bottom:24px;
-            /* intro साठी ॲनिमेशन */
-            opacity: 0; 
-            transform: translateY(20px); 
+            opacity: 0;
             animation: fadeIn 1s ease-out forwards;
+            animation-delay: 0.5s;
         }
         .intro .text h2{ margin:0 0 8px; font-size:1.4rem }
         .intro .text p{ margin:0; color:var(--muted) }
@@ -129,15 +140,13 @@
             overflow:hidden;
             box-shadow:0 8px 22px rgba(10,10,10,.06);
             transition:transform .3s ease, box-shadow .3s ease;
-            /* कार्डसाठी ॲनिमेशन */
             opacity: 0;
-            transform: translateY(20px);
-            animation: fadeInUp 0.8s ease-out forwards;
+            animation: fadeIn 0.8s ease-out forwards;
         }
-        .card:nth-child(1) { animation-delay: 0.1s; }
-        .card:nth-child(2) { animation-delay: 0.2s; }
-        .card:nth-child(3) { animation-delay: 0.3s; }
-        .card:nth-child(4) { animation-delay: 0.4s; }
+        .card:nth-child(1) { animation-delay: 0.8s; }
+        .card:nth-child(2) { animation-delay: 0.9s; }
+        .card:nth-child(3) { animation-delay: 1s; }
+        .card:nth-child(4) { animation-delay: 1.1s; }
         
         .card img{
             width:100%;
@@ -147,7 +156,7 @@
             transition:transform .4s ease;
         }
         .card:hover{ 
-            transform:translateY(-8px) rotate(1deg); /* रोटेशन ॲड केले */
+            transform:translateY(-8px) scale(1.02);
             box-shadow:0 18px 40px rgba(10,10,10,.15); 
         }
         .card:hover img{ transform:scale(1.06) }
@@ -164,11 +173,9 @@
             display:grid;
             gap:16px;
             margin-top:20px;
-            /* इव्हेंट्ससाठी ॲनिमेशन */
             opacity: 0;
-            transform: translateY(30px);
-            animation: fadeInUp 0.8s ease-out forwards;
-            animation-delay: 0.5s;
+            animation: fadeIn 0.8s ease-out forwards;
+            animation-delay: 1.4s;
         }
         .event{
             display:flex;
@@ -180,9 +187,7 @@
             box-shadow:0 6px 16px rgba(10,10,10,.04);
             transition:transform .2s ease;
         }
-        .event:hover {
-            transform: translateY(-4px); /* इव्हेंट कार्डसाठी ॲनिमेशन */
-        }
+        .event:hover { transform: translateY(-4px); }
         
         .event .date{
             min-width:80px;
@@ -203,11 +208,9 @@
             border-radius:12px;
             padding:16px;
             box-shadow:0 6px 16px rgba(10,10,10,.04);
-            /* संपर्क सेक्शनसाठी ॲनिमेशन */
             opacity: 0;
-            transform: translateY(30px);
-            animation: fadeInUp 1s ease-out forwards;
-            animation-delay: 1s;
+            animation: fadeIn 1s ease-out forwards;
+            animation-delay: 1.8s;
         }
         footer{
             margin-top:32px;
@@ -241,16 +244,6 @@
         .lightbox img{ max-width:100%; max-height:92vh; border-radius:10px; box-shadow:0 18px 50px rgba(0,0,0,.5) }
         .close-btn{
             position:absolute; right:20px; top:20px; color:white; font-size:30px; cursor:pointer; font-weight:700;
-        }
-        
-        /* सर्व ॲनिमेशनचा कोड */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
         }
     </style>
 </head>
@@ -305,11 +298,11 @@
                     <div class="caption">श्री.अध्यक्ष</div>
                 </div>
                 <div class="card">
-                    <img src="images6.jpeg" alt="उपअध्यक्ष" loading="lazy" onclick="openLight(this)">
+                    <img src="images6.jpg" alt="उपअध्यक्ष" loading="lazy" onclick="openLight(this)">
                     <div class="caption">श्री.उपअध्यक्ष</div>
                 </div>
                 <div class="card">
-                    <img src="images7.jpeg" alt="खजिनदार" loading="lazy" onclick="openLight(this)">
+                    <img src="images7.jpg" alt="खजिनदार" loading="lazy" onclick="openLight(this)">
                     <div class="caption">श्री.खजिनदार</div>
                 </div>
             </div>
