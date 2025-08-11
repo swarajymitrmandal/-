@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="mr">
 <head>
@@ -20,14 +21,12 @@
             animation: fadeIn 1.5s ease-in-out;
         }
         header img {
-            <img src="images/logo.jpg" alt="Swarajya Mitra Mandal Logo" width="300">
-
-    
             max-width: 160px;
             display: block;
             margin: 0 auto 15px;
             filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3));
             transition: transform 0.3s ease;
+            border-radius: 10px;
         }
         header img:hover {
             transform: scale(1.05);
@@ -76,7 +75,7 @@
             width: 100%;
             max-width: 300px;
             border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2));
             transition: transform 0.3s ease;
         }
         .gallery img:hover {
@@ -101,26 +100,31 @@
 </head>
 <body>
     <header>
-        <img src="1000027511.jpg" alt="स्वराज्य मित्र मंडळ लोगो">
+        <!-- लोगो योग्य path ने -->
+        <img src="images/logo.jpg" alt="स्वराज्य मित्र मंडळ लोगो">
         <h1>स्वराज्य मित्र मंडळ</h1>
         <p>नामदेव घुले नगर, गोपाळपट्टी, मंजरी बु.</p>
     </header>
+
     <nav>
         <a href="#about">आमच्याबद्दल</a>
         <a href="#gallery">गॅलरी</a>
         <a href="#events">इव्हेंट्स</a>
         <a href="#contact">संपर्क</a>
     </nav>
+
     <section id="about">
         <h2>आमच्याबद्दल</h2>
         <p>स्वराज्य मित्र मंडळ ही समाजसेवा, सांस्कृतिक उपक्रम आणि उत्सव साजरे करण्यासाठी कार्यरत असलेली मंडळी आहे. आमच्या सर्व सदस्यांचा एकमेव उद्देश – एकतेतून प्रगती.</p>
     </section>
+
     <section id="gallery" class="gallery">
         <h2>गॅलरी</h2>
-        <img src="https://via.placeholder.com/300x200.png?text=Photo+1" alt="Photo 1">
-        <img src="https://via.placeholder.com/300x200.png?text=Photo+2" alt="Photo 2">
-        <img src="https://via.placeholder.com/300x200.png?text=Photo+3" alt="Photo 3">
+        <img src="images/photo1.jpg" alt="Photo 1">
+        <img src="images/photo2.jpg" alt="Photo 2">
+        <img src="images/photo3.jpg" alt="Photo 3">
     </section>
+
     <section id="events">
         <h2>इव्हेंट्स</h2>
         <ul>
@@ -128,11 +132,13 @@
             <li>शिवजयंती उत्सव – १९ फेब्रुवारी</li>
         </ul>
     </section>
+
     <section id="contact">
         <h2>संपर्क</h2>
         <p>📍 नामदेव घुले नगर, गोपाळपट्टी, मंजरी बु.</p>
         <p>📞 +91 8483899213</p>
     </section>
+
     <footer>
         <p>© 2025 स्वराज्य मित्र मंडळ | सर्व हक्क राखीव</p>
     </footer>
