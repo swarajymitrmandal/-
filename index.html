@@ -8,27 +8,27 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     
     <style>
         :root{
-            --primary:#ff4500; /* ऑरेंज-रेड */
-            --primary-dark:#d43900;
-            --bg1:#f8f9fa; /* फिकट ग्रे */
+            --primary:#e65100; /* गडद ऑरेंज */
+            --primary-dark:#bf360c;
+            --bg1:#f5f5f5; /* फिकट ग्रे */
             --bg2:#ffffff; /* पांढरा */
             --card:#ffffff;
-            --muted:#666;
-            --radius:12px;
+            --muted:#616161;
+            --radius:10px;
         }
         *{box-sizing:border-box}
         body{
             margin:0;
-            font-family: 'Poppins', "Noto Sans Devanagari", sans-serif;
+            font-family: 'Roboto', "Noto Sans Devanagari", sans-serif;
             background: linear-gradient(180deg,var(--bg1),var(--bg2));
-            color:#222;
+            color:#212121;
             -webkit-font-smoothing:antialiased;
             -moz-osx-font-smoothing:grayscale;
-            line-height:1.45;
+            line-height:1.6;
         }
 
         /* header */
@@ -36,7 +36,7 @@
             background: linear-gradient(135deg,var(--primary),var(--primary-dark));
             color:white;
             text-align:center;
-            padding:40px 16px;
+            padding:50px 16px;
             position:relative;
         }
         .logo-wrap{
@@ -57,8 +57,9 @@
         }
         .logo:hover{ transform:scale(1.04) }
 
-        h1{ margin:6px 0 4px; font-size:1.9rem; letter-spacing:0.4px }
-        .sub{ opacity:.95; color:rgba(255,255,255,.95); margin:0; font-size:0.95rem }
+        h1{ margin:6px 0 4px; font-family: 'Montserrat', sans-serif; font-size:2.2rem; letter-spacing:0.8px; font-weight:700; }
+        h2{ font-family: 'Montserrat', sans-serif; font-weight:700; }
+        .sub{ opacity:.95; color:rgba(255,255,255,.95); margin:0; font-size:1rem }
 
         /* nav */
         nav{
@@ -66,14 +67,14 @@
             position:sticky;
             top:0;
             z-index:100;
-            box-shadow:0 2px 6px rgba(0,0,0,.08);
+            box-shadow:0 2px 8px rgba(0,0,0,.15);
         }
         .nav-inner{
             display:flex;
             gap:14px;
             max-width:980px;
             margin:0 auto;
-            padding:10px 12px;
+            padding:12px 16px;
             justify-content:center;
             flex-wrap:wrap;
         }
@@ -81,16 +82,16 @@
             color:white;
             text-decoration:none;
             font-weight:600;
-            padding:6px 10px;
+            padding:8px 12px;
             border-radius:8px;
             transition:background .18s;
         }
-        .nav-inner a:hover{ background:rgba(255,255,255,0.08) }
+        .nav-inner a:hover{ background:rgba(255,255,255,0.15) }
 
         /* container */
         .container{
             max-width:980px;
-            margin:28px auto;
+            margin:32px auto;
             padding:0 16px;
         }
 
@@ -98,128 +99,103 @@
         .intro{
             background:var(--card);
             border-radius:var(--radius);
-            padding:18px;
+            padding:20px;
             box-shadow:0 6px 18px rgba(15,15,15,.06);
             display:flex;
-            gap:16px;
+            gap:20px;
             align-items:center;
-            margin-bottom:20px;
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeInUp 0.5s forwards;
-            animation-delay: 0.1s;
+            margin-bottom:24px;
         }
-        .intro .text h2{ margin:0 0 8px; font-size:1.2rem }
+        .intro .text h2{ margin:0 0 8px; font-size:1.4rem }
         .intro .text p{ margin:0; color:var(--muted) }
 
         /* gallery */
         .gallery {
             display:grid;
-            grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
-            gap:12px;
-            margin-top:8px;
+            grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+            gap:16px;
+            margin-top:12px;
         }
         .card{
             background:var(--card);
-            border-radius:10px;
+            border-radius:12px;
             overflow:hidden;
             box-shadow:0 8px 22px rgba(10,10,10,.06);
-            transition:transform .25s ease, box-shadow .25s ease;
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeInUp .5s forwards;
+            transition:transform .3s ease, box-shadow .3s ease;
         }
-        /* प्रत्येक कार्डसाठी वेगळा ॲनिमेशन डिले */
-        .card:nth-child(1) { animation-delay: 0.2s; }
-        .card:nth-child(2) { animation-delay: 0.3s; }
-        .card:nth-child(3) { animation-delay: 0.4s; }
-        .card:nth-child(4) { animation-delay: 0.5s; }
-        .card:nth-child(5) { animation-delay: 0.6s; }
-        .card:nth-child(6) { animation-delay: 0.7s; }
-
         .card img{
             width:100%;
-            height:160px;
+            height:180px;
             object-fit:cover;
             display:block;
-            transition:transform .35s ease;
+            transition:transform .4s ease;
         }
-        .card:hover{ transform:translateY(-6px); box-shadow:0 14px 30px rgba(10,10,10,.12) }
-        .card:hover img{ transform:scale(1.04) }
+        .card:hover{ transform:translateY(-8px); box-shadow:0 18px 40px rgba(10,10,10,.15) }
+        .card:hover img{ transform:scale(1.06) }
 
         .card .caption{
-            padding:10px;
-            font-size:0.94rem;
-            color:#333;
+            padding:12px;
+            font-size:1rem;
+            color:#212121;
+            font-weight:600;
         }
         /* events */
         .events{
             display:grid;
-            gap:12px;
-            margin-top:18px;
+            gap:16px;
+            margin-top:20px;
         }
         .event{
             display:flex;
-            gap:12px;
+            gap:16px;
             align-items:center;
             background:var(--card);
-            padding:12px;
-            border-radius:10px;
+            padding:16px;
+            border-radius:12px;
             box-shadow:0 6px 16px rgba(10,10,10,.04);
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeInUp .5s forwards;
         }
-        /* प्रत्येक इव्हेंटसाठी वेगळा ॲनिमेशन डिले */
-        .event:nth-child(1) { animation-delay: 0.7s; }
-        .event:nth-child(2) { animation-delay: 0.8s; }
-        
         .event .date{
-            min-width:72px;
+            min-width:80px;
             text-align:center;
             background:linear-gradient(180deg,var(--bg1),#fff);
-            border-radius:8px;
-            padding:6px 8px;
+            border-radius:10px;
+            padding:8px 10px;
             font-weight:700;
             color:var(--primary-dark);
             box-shadow:inset 0 -2px 6px rgba(0,0,0,.02);
         }
-        .event .detail{ font-size:0.95rem; color:#222 }
+        .event .detail{ font-size:1rem; color:#212121; }
 
         /* contact + footer */
         .contact{
-            margin-top:18px;
+            margin-top:24px;
             background:var(--card);
-            border-radius:10px;
-            padding:12px;
+            border-radius:12px;
+            padding:16px;
             box-shadow:0 6px 16px rgba(10,10,10,.04);
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeInUp .5s forwards;
-            animation-delay: 0.9s;
         }
         footer{
-            margin-top:28px;
-            padding:14px 16px;
+            margin-top:32px;
+            padding:20px 16px;
             text-align:center;
             color:white;
             background:linear-gradient(135deg,var(--primary),var(--primary-dark));
-            border-top-left-radius:12px;
-            border-top-right-radius:12px;
-            font-size:0.95rem;
+            border-top-left-radius:15px;
+            border-top-right-radius:15px;
+            font-size:1rem;
         }
 
         /* responsive tweaks */
         @media (max-width:520px){
             .logo{ width:100px; height:100px }
-            h1{ font-size:1.4rem }
+            h1{ font-size:1.8rem }
         }
 
         /* simple modal lightbox */
         .lightbox{
             position:fixed;
             inset:0;
-            background:rgba(0,0,0,.75);
+            background:rgba(0,0,0,.85);
             display:none;
             align-items:center;
             justify-content:center;
@@ -229,15 +205,7 @@
         .lightbox.open{ display:flex }
         .lightbox img{ max-width:100%; max-height:92vh; border-radius:10px; box-shadow:0 18px 50px rgba(0,0,0,.5) }
         .close-btn{
-            position:absolute; right:18px; top:18px; color:white; font-size:26px; cursor:pointer; font-weight:700;
-        }
-
-        /* ॲनिमेशनचा कोड */
-        @keyframes fadeInUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            position:absolute; right:20px; top:20px; color:white; font-size:30px; cursor:pointer; font-weight:700;
         }
     </style>
 </head>
@@ -277,7 +245,7 @@
             <div class="gallery">
                 <div class="card"><img src="images.jpg" alt="Swarajya Mitra Mandal photo" loading="lazy" onclick="openLight(this)"><div class="caption">मंडळाचे चिन्ह</div></div>
                 <div class="card"><img src="images2.jpg" alt="Photo 1" loading="lazy" onclick="openLight(this)"><div class="caption">गेल्या वर्षाचे क्षण</div></div>
-                </div>
+            </div>
         </section>
 
         <section id="mandala-adhikari">
@@ -310,7 +278,7 @@
             </div>
         </section>
 
-        <section id="contact" class="contact" style="margin-top:18px">
+        <section id="contact" class="contact" style="margin-top:24px">
             <h2>संपर्क</h2>
             <p style="margin:6px 0">📍 नामदेव घुले नगर, गोपाळपट्टी, मंजरी बु.</p>
             <p style="margin:6px 0">📞 +91 8483899213</p>
