@@ -84,9 +84,12 @@
             font-weight:600;
             padding:8px 12px;
             border-radius:8px;
-            transition:background .18s;
+            transition: background .18s, transform .18s ease-in-out; /* ॲनिमेशनसाठी ट्रान्झिशन */
         }
-        .nav-inner a:hover{ background:rgba(255,255,255,0.15) }
+        .nav-inner a:hover{ 
+            background:rgba(255,255,255,0.15);
+            transform: scale(1.05); /* बटणांसाठी ॲनिमेशन */
+        }
 
         /* container */
         .container{
@@ -105,6 +108,10 @@
             gap:20px;
             align-items:center;
             margin-bottom:24px;
+            /* intro साठी ॲनिमेशन */
+            opacity: 0; 
+            transform: translateY(20px); 
+            animation: fadeIn 1s ease-out forwards;
         }
         .intro .text h2{ margin:0 0 8px; font-size:1.4rem }
         .intro .text p{ margin:0; color:var(--muted) }
@@ -122,7 +129,16 @@
             overflow:hidden;
             box-shadow:0 8px 22px rgba(10,10,10,.06);
             transition:transform .3s ease, box-shadow .3s ease;
+            /* कार्डसाठी ॲनिमेशन */
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s ease-out forwards;
         }
+        .card:nth-child(1) { animation-delay: 0.1s; }
+        .card:nth-child(2) { animation-delay: 0.2s; }
+        .card:nth-child(3) { animation-delay: 0.3s; }
+        .card:nth-child(4) { animation-delay: 0.4s; }
+        
         .card img{
             width:100%;
             height:180px;
@@ -130,7 +146,10 @@
             display:block;
             transition:transform .4s ease;
         }
-        .card:hover{ transform:translateY(-8px); box-shadow:0 18px 40px rgba(10,10,10,.15) }
+        .card:hover{ 
+            transform:translateY(-8px) rotate(1deg); /* रोटेशन ॲड केले */
+            box-shadow:0 18px 40px rgba(10,10,10,.15); 
+        }
         .card:hover img{ transform:scale(1.06) }
 
         .card .caption{
@@ -139,11 +158,17 @@
             color:#212121;
             font-weight:600;
         }
+
         /* events */
         .events{
             display:grid;
             gap:16px;
             margin-top:20px;
+            /* इव्हेंट्ससाठी ॲनिमेशन */
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s ease-out forwards;
+            animation-delay: 0.5s;
         }
         .event{
             display:flex;
@@ -153,7 +178,12 @@
             padding:16px;
             border-radius:12px;
             box-shadow:0 6px 16px rgba(10,10,10,.04);
+            transition:transform .2s ease;
         }
+        .event:hover {
+            transform: translateY(-4px); /* इव्हेंट कार्डसाठी ॲनिमेशन */
+        }
+        
         .event .date{
             min-width:80px;
             text-align:center;
@@ -173,6 +203,11 @@
             border-radius:12px;
             padding:16px;
             box-shadow:0 6px 16px rgba(10,10,10,.04);
+            /* संपर्क सेक्शनसाठी ॲनिमेशन */
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1s ease-out forwards;
+            animation-delay: 1s;
         }
         footer{
             margin-top:32px;
@@ -206,6 +241,16 @@
         .lightbox img{ max-width:100%; max-height:92vh; border-radius:10px; box-shadow:0 18px 50px rgba(0,0,0,.5) }
         .close-btn{
             position:absolute; right:20px; top:20px; color:white; font-size:30px; cursor:pointer; font-weight:700;
+        }
+        
+        /* सर्व ॲनिमेशनचा कोड */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
     </style>
 </head>
