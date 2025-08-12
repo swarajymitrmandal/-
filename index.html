@@ -12,6 +12,8 @@
     
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <style>
         :root{
             --primary:#e65100;
@@ -26,7 +28,7 @@
         body{
             margin:0;
             font-family: 'Roboto', "Noto Sans Devanagari", sans-serif;
-            background: #f0f2f5; /* बॅकग्राऊंड कलर बदललेला आहे */
+            background: #f0f2f5;
             color:#212121;
             -webkit-font-smoothing:antialiased;
             -moz-osx-font-smoothing:grayscale;
@@ -75,14 +77,14 @@
         h2{ font-family: 'Montserrat', sans-serif; font-weight:700; }
         .sub{ 
             opacity:.95; 
-            color:#fff8e1; /* इथे रंग बदलला आहे */
+            color:#fff8e1;
             margin:0; 
             font-size:1rem 
         }
 
         /* nav */
         nav{
-            background:var(--primary-dark);
+            background: #b8430b; /* मेनूचा रंग थोडा वेगळा केला आहे */
             position:sticky;
             top:0;
             z-index:100;
@@ -108,6 +110,9 @@
         .nav-inner a:hover{ 
             background:rgba(255,255,255,0.15);
             transform: scale(1.1); 
+        }
+        .nav-inner a i { /* आयकॉन आणि टेक्स्टमध्ये जागा ठेवण्यासाठी */
+            margin-right: 6px;
         }
 
         /* container */
@@ -266,11 +271,11 @@
 
     <nav>
         <div class="nav-inner">
-            <a href="#about">आमच्याबद्दल</a>
-            <a href="#gallery">गॅलरी</a>
-            <a href="#mandala-adhikari">मंडाळाचे कार्याधिकारी</a>
-            <a href="#events">इव्हेंट्स</a>
-            <a href="#contact">संपर्क</a>
+            <a href="#about"><i class="fas fa-info-circle"></i> आमच्याबद्दल</a>
+            <a href="#gallery"><i class="fas fa-images"></i> गॅलरी</a>
+            <a href="#mandala-adhikari"><i class="fas fa-users"></i> मंडाळाचे कार्याधिकारी</a>
+            <a href="#events"><i class="fas fa-calendar-alt"></i> इव्हेंट्स</a>
+            <a href="#contact"><i class="fas fa-envelope"></i> संपर्क</a>
         </div>
     </nav>
 
@@ -290,6 +295,7 @@
             <div class="gallery">
                 <div class="card"><img src="images.jpg" alt="Swarajya Mitra Mandal photo" loading="lazy" onclick="openLight(this)"><div class="caption">मंडळाचे चिन्ह</div></div>
                 <div class="card"><img src="images2.jpg" alt="Photo 1" loading="lazy" onclick="openLight(this)"><div class="caption">गेल्या वर्षाचे क्षण</div></div>
+                <div class="card"><img src="images3.jpg" alt="Photo 2" loading="lazy" onclick="openLight(this)"><div class="caption">कार्यक्रमाची झलक</div></div>
             </div>
         </section>
 
@@ -347,17 +353,9 @@
             <p style="margin:6px 0">📸 Instagram: @swarajymitrmandal</p>
         </section>
 
-       <footer style="margin-top:32px; padding:20px 16px; text-align:center; color:white; background:linear-gradient(135deg,var(--primary),var(--primary-dark)); border-top-left-radius:15px; border-top-right-radius:15px; font-size:1rem;">
-    <p style="margin:0;">© <span id="year"></span> स्वराज्य मित्र मंडळ · सर्व हक्क राखीव</p>
-    <div style="margin-top:10px;">
-        <a href="https://www.instagram.com/swarajymitrmandal" target="_blank" style="color:white; text-decoration:none; margin:0 8px;">
-            Instagram
-        </a>
-        <a href="tel:+918483899213" style="color:white; text-decoration:none; margin:0 8px;">
-            Phone
-        </a>
-    </div>
-</footer>
+        <footer>
+            © <span id="year"></span> स्वराज्य मित्र मंडळ · सर्व हक्क राखीव
+        </footer>
     </main>
 
     <div id="light" class="lightbox" onclick="closeLight(event)">
