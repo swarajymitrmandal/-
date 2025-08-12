@@ -1,379 +1,394 @@
-<!DOCTYPE html>
-<html lang="mr">
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>स्वराज्य मित्र मंडळ</title>
-    <meta name="description" content="स्वराज्य मित्र मंडळ — समाजसेवा, सांस्कृतिक उपक्रम आणि एकतेसाठी समर्पित मंडळ." />
+I understand. I'll add the new background color code directly to your HTML and send you the complete, updated file.
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+Here is your full HTML code with the updated background color.
 
-    <style>
-        :root{
-            --primary:#e65100;
-            --primary-dark:#bf360c;
-            --bg1:#e8f4f8;
-            --bg2:#e1eef4;
-            --card:#ffffff;
-            --muted:#545454;
-            --radius:10px;
-        }
-        *{box-sizing:border-box}
-        body{
-            margin:0;
-            font-family: 'Roboto', "Noto Sans Devanagari", sans-serif;
-            background: linear-gradient(180deg,var(--bg1),var(--bg2));
-            color:#212121;
-            -webkit-font-smoothing:antialiased;
-            -moz-osx-font-smoothing:grayscale;
-            line-height:1.6;
-        }
+I have replaced this line:
+`background: linear-gradient(180deg,var(--bg1),var(--bg2));`
 
-        /* ॲनिमेशनचा कोड */
-        @keyframes headerFadeIn {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+with this line:
+`background: #f0f2f5; /* A light gray shade */`
 
-        /* header */
-        header {
-            background: linear-gradient(135deg,var(--primary),var(--primary-dark));
-            color:white;
-            text-align:center;
-            padding:50px 16px;
-            position:relative;
-            opacity: 0;
-            animation: headerFadeIn 1s ease-out forwards;
-        }
-        .logo-wrap{
-            max-width:980px;
-            margin:0 auto;
-        }
-        .logo{
-            width:120px;
-            height:120px;
-            object-fit:cover;
-            border-radius:16px;
-            box-shadow:0 8px 20px rgba(0,0,0,.25);
-            display:block;
-            margin:0 auto 12px;
-            transition:transform .25s ease;
-            background:white;
-            padding:6px;
-        }
-        .logo:hover{ transform:scale(1.08) rotate(-2deg); }
+-----
 
-        h1{ margin:6px 0 4px; font-family: 'Montserrat', sans-serif; font-size:2.2rem; letter-spacing:0.8px; font-weight:700; }
-        h2{ font-family: 'Montserrat', sans-serif; font-weight:700; }
-        .sub{ 
-            opacity:.95; 
-            color:#fff8e1; /* इथे रंग बदलला आहे */
-            margin:0; 
-            font-size:1rem 
-        }
+\<\!DOCTYPE html\>
 
-        /* nav */
-        nav{
-            background:var(--primary-dark);
-            position:sticky;
-            top:0;
-            z-index:100;
-            box-shadow:0 2px 8px rgba(0,0,0,.15);
-        }
-        .nav-inner{
-            display:flex;
-            gap:14px;
-            max-width:980px;
-            margin:0 auto;
-            padding:12px 16px;
-            justify-content:center;
-            flex-wrap:wrap;
-        }
-        .nav-inner a{
-            color:white;
-            text-decoration:none;
-            font-weight:600;
-            padding:8px 12px;
-            border-radius:8px;
-            transition: background .18s, transform .2s ease;
-        }
-        .nav-inner a:hover{ 
-            background:rgba(255,255,255,0.15);
-            transform: scale(1.1); 
-        }
+\<html lang="mr"\>
+\<head\>
+    \<meta charset="utf-8" /\>
+    \<meta name="viewport" content="width=device-width,initial-scale=1" /\>
+    \<title\>स्वराज्य मित्र मंडळ\</title\>
+    \<meta name="description" content="स्वराज्य मित्र मंडळ — समाजसेवा, सांस्कृतिक उपक्रम आणि एकतेसाठी समर्पित मंडळ." /\>
 
-        /* container */
-        .container{
-            max-width:980px;
-            margin:32px auto;
-            padding:0 16px;
-        }
+    \<link rel="preconnect" href="[https://fonts.googleapis.com](https://fonts.googleapis.com)"\>
+    \<link rel="preconnect" href="[https://fonts.gstatic.com](https://fonts.gstatic.com)" crossorigin\>
+    \<link href="[https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700\&family=Roboto:wght@400;700\&display=swap](https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;700&display=swap)" rel="stylesheet"\>
+    
+    \<link rel="icon" href="favicon.ico" type="image/x-icon"\>
 
-        /* intro card */
-        .intro{
-            background:var(--card);
-            border-radius:var(--radius);
-            padding:20px;
-            box-shadow:0 6px 18px rgba(15,15,15,.06);
-            display:flex;
-            gap:20px;
-            align-items:center;
-            margin-bottom:24px;
-            opacity: 0;
-            animation: fadeIn 1s ease-out forwards;
-            animation-delay: 0.5s;
-        }
-        .intro .text h2{ margin:0 0 8px; font-size:1.4rem }
-        .intro .text p{ margin:0; color:var(--muted) }
+    \<style\>
+        :root{
+            --primary:\#e65100;
+            --primary-dark:\#bf360c;
+            --bg1:\#e8f4f8;
+            --bg2:\#e1eef4;
+            --card:\#ffffff;
+            --muted:\#545454;
+            --radius:10px;
+        }
+        *{box-sizing:border-box}
+        body{
+            margin:0;
+            font-family: 'Roboto', "Noto Sans Devanagari", sans-serif;
+            background: \#f0f2f5; /* बॅकग्राऊंड कलर बदललेला आहे \*/
+            color:\#212121;
+            -webkit-font-smoothing:antialiased;
+            -moz-osx-font-smoothing:grayscale;
+            line-height:1.6;
+        }
 
-        /* gallery */
-        .gallery {
-            display:grid;
-            grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-            gap:16px;
-            margin-top:12px;
-        }
-        .card{
-            background:var(--card);
-            border-radius:12px;
-            overflow:hidden;
-            box-shadow:0 8px 22px rgba(10,10,10,.06);
-            transition:transform .3s ease, box-shadow .3s ease;
-            opacity: 0;
-            animation: fadeIn 0.8s ease-out forwards;
-        }
-        .card:nth-child(1) { animation-delay: 0.8s; }
-        .card:nth-child(2) { animation-delay: 0.9s; }
-        .card:nth-child(3) { animation-delay: 1s; }
-        .card:nth-child(4) { animation-delay: 1.1s; }
-        
-        .card img{
-            width:100%;
-            height:180px;
-            object-fit:cover;
-            display:block;
-            transition:transform .4s ease;
-        }
-        .card:hover{ 
-            transform:translateY(-8px) scale(1.02);
-            box-shadow:0 18px 40px rgba(10,10,10,.15); 
-        }
-        .card:hover img{ transform:scale(1.06) }
+        /\* ॲनिमेशनचा कोड \*/
+        @keyframes headerFadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
 
-        .card .caption{
-            padding:12px;
-            font-size:1rem;
-            color:#212121;
-            font-weight:600;
-        }
+        /\* header \*/
+        header {
+            background: linear-gradient(135deg,var(--primary),var(--primary-dark));
+            color:white;
+            text-align:center;
+            padding:50px 16px;
+            position:relative;
+            opacity: 0;
+            animation: headerFadeIn 1s ease-out forwards;
+        }
+        .logo-wrap{
+            max-width:980px;
+            margin:0 auto;
+        }
+        .logo{
+            width:120px;
+            height:120px;
+            object-fit:cover;
+            border-radius:16px;
+            box-shadow:0 8px 20px rgba(0,0,0,.25);
+            display:block;
+            margin:0 auto 12px;
+            transition:transform .25s ease;
+            background:white;
+            padding:6px;
+        }
+        .logo:hover{ transform:scale(1.08) rotate(-2deg); }
 
-        /* events */
-        .events{
-            display:grid;
-            gap:16px;
-            margin-top:20px;
-            opacity: 0;
-            animation: fadeIn 0.8s ease-out forwards;
-            animation-delay: 1.4s;
-        }
-        .event{
-            display:flex;
-            gap:16px;
-            align-items:center;
-            background:var(--card);
-            padding:16px;
-            border-radius:12px;
-            box-shadow:0 6px 16px rgba(10,10,10,.04);
-            transition:transform .2s ease;
-        }
-        .event:hover { transform: translateY(-4px); }
-        
-        .event .date{
-            min-width:80px;
-            text-align:center;
-            background:linear-gradient(180deg,var(--bg1),#fff);
-            border-radius:10px;
-            padding:8px 10px;
-            font-weight:700;
-            color:var(--primary-dark);
-            box-shadow:inset 0 -2px 6px rgba(0,0,0,.02);
-        }
-        .event .detail{ font-size:1rem; color:#212121; }
+        h1{ margin:6px 0 4px; font-family: 'Montserrat', sans-serif; font-size:2.2rem; letter-spacing:0.8px; font-weight:700; }
+        h2{ font-family: 'Montserrat', sans-serif; font-weight:700; }
+        .sub{ 
+            opacity:.95; 
+            color:\#fff8e1; /\* इथे रंग बदलला आहे \*/
+            margin:0; 
+            font-size:1rem 
+        }
 
-        /* contact + footer */
-        .contact{
-            margin-top:24px;
-            background:var(--card);
-            border-radius:12px;
-            padding:16px;
-            box-shadow:0 6px 16px rgba(10,10,10,.04);
-            opacity: 0;
-            animation: fadeIn 1s ease-out forwards;
-            animation-delay: 1.8s;
-        }
-        footer{
-            margin-top:32px;
-            padding:20px 16px;
-            text-align:center;
-            color:white;
-            background:linear-gradient(135deg,var(--primary),var(--primary-dark));
-            border-top-left-radius:15px;
-            border-top-right-radius:15px;
-            font-size:1rem;
-        }
+        /\* nav \*/
+        nav{
+            background:var(--primary-dark);
+            position:sticky;
+            top:0;
+            z-index:100;
+            box-shadow:0 2px 8px rgba(0,0,0,.15);
+        }
+        .nav-inner{
+            display:flex;
+            gap:14px;
+            max-width:980px;
+            margin:0 auto;
+            padding:12px 16px;
+            justify-content:center;
+            flex-wrap:wrap;
+        }
+        .nav-inner a{
+            color:white;
+            text-decoration:none;
+            font-weight:600;
+            padding:8px 12px;
+            border-radius:8px;
+            transition: background .18s, transform .2s ease;
+        }
+        .nav-inner a:hover{ 
+            background:rgba(255,255,255,0.15);
+            transform: scale(1.1); 
+        }
 
-        /* responsive tweaks */
-        @media (max-width:520px){
-            .logo{ width:100px; height:100px }
-            h1{ font-size:1.8rem }
-        }
+        /\* container \*/
+        .container{
+            max-width:980px;
+            margin:32px auto;
+            padding:0 16px;
+        }
 
-        /* simple modal lightbox */
-        .lightbox{
-            position:fixed;
-            inset:0;
-            background:rgba(0,0,0,.85);
-            display:none;
-            align-items:center;
-            justify-content:center;
-            z-index:9999;
-            padding:20px;
-        }
-        .lightbox.open{ display:flex }
-        .lightbox img{ max-width:100%; max-height:92vh; border-radius:10px; box-shadow:0 18px 50px rgba(0,0,0,.5) }
-        .close-btn{
-            position:absolute; right:20px; top:20px; color:white; font-size:30px; cursor:pointer; font-weight:700;
-        }
-    </style>
-</head>
-<body>
+        /\* intro card \*/
+        .intro{
+            background:var(--card);
+            border-radius:var(--radius);
+            padding:20px;
+            box-shadow:0 6px 18px rgba(15,15,15,.06);
+            display:flex;
+            gap:20px;
+            align-items:center;
+            margin-bottom:24px;
+            opacity: 0;
+            animation: fadeIn 1s ease-out forwards;
+            animation-delay: 0.5s;
+        }
+        .intro .text h2{ margin:0 0 8px; font-size:1.4rem }
+        .intro .text p{ margin:0; color:var(--muted) }
 
-    <header>
-        <div class="logo-wrap">
-            <img class="logo" src="favicon.ico.jpeg" alt="स्वराज्य मित्र मंडळ लोगो" onerror="this.style.display='none'">
-            <h1>|| स्वराज्य मित्र मंडळ ||</h1>
-            <p class="sub">नामदेव घुले नगर, गोपाळपट्टी, मंजरी बु.</p>
-        </div>
-    </header>
+        /\* gallery \*/
+        .gallery {
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+            gap:16px;
+            margin-top:12px;
+        }
+        .card{
+            background:var(--card);
+            border-radius:12px;
+            overflow:hidden;
+            box-shadow:0 8px 22px rgba(10,10,10,.06);
+            transition:transform .3s ease, box-shadow .3s ease;
+            opacity: 0;
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+        .card:nth-child(1) { animation-delay: 0.8s; }
+        .card:nth-child(2) { animation-delay: 0.9s; }
+        .card:nth-child(3) { animation-delay: 1s; }
+        .card:nth-child(4) { animation-delay: 1.1s; }
+        
+        .card img{
+            width:100%;
+            height:180px;
+            object-fit:cover;
+            display:block;
+            transition:transform .4s ease;
+        }
+        .card:hover{ 
+            transform:translateY(-8px) scale(1.02);
+            box-shadow:0 18px 40px rgba(10,10,10,.15); 
+        }
+        .card:hover img{ transform:scale(1.06) }
 
-    <nav>
-        <div class="nav-inner">
-            <a href="#about">आमच्याबद्दल</a>
-            <a href="#gallery">गॅलरी</a>
-            <a href="#mandala-adhikari">मंडाळाचे कार्याधिकारी</a>
-            <a href="#events">इव्हेंट्स</a>
-            <a href="#contact">संपर्क</a>
-        </div>
-    </nav>
+        .card .caption{
+            padding:12px;
+            font-size:1rem;
+            color:\#212121;
+            font-weight:600;
+        }
 
-    <main class="container">
-        <section id="about" class="intro">
-            <div style="flex:0 0 64px;">
-                <div style="width:56px;height:56px;border-radius:10px;background:linear-gradient(180deg,var(--primary),var(--primary-dark));display:flex;align-items:center;justify-content:center;color:white;font-weight:700">SMM</div>
-            </div>
-            <div class="text">
-                <h2>आमची ओळख</h2>
-                <p>“स्वराज्य मित्र मंडळ” हा आपल्या परिसरातील ऐक्य, सामाजिक कार्य आणि सांस्कृतिक जतनासाठी कार्यरत समुदाय आहे. आम्ही उत्सव, जनजागृती आणि सेवा उपक्रम आयोजित करतो. (स्थापना: 2015)</p>
-            </div>
-        </section>
+        /\* events \*/
+        .events{
+            display:grid;
+            gap:16px;
+            margin-top:20px;
+            opacity: 0;
+            animation: fadeIn 0.8s ease-out forwards;
+            animation-delay: 1.4s;
+        }
+        .event{
+            display:flex;
+            gap:16px;
+            align-items:center;
+            background:var(--card);
+            padding:16px;
+            border-radius:12px;
+            box-shadow:0 6px 16px rgba(10,10,10,.04);
+            transition:transform .2s ease;
+        }
+        .event:hover { transform: translateY(-4px); }
+        
+        .event .date{
+            min-width:80px;
+            text-align:center;
+            background:linear-gradient(180deg,var(--bg1),\#fff);
+            border-radius:10px;
+            padding:8px 10px;
+            font-weight:700;
+            color:var(--primary-dark);
+            box-shadow:inset 0 -2px 6px rgba(0,0,0,.02);
+        }
+        .event .detail{ font-size:1rem; color:\#212121; }
 
-        <section id="gallery">
-            <h2 style="margin:6px 0 10px;">गॅलरी</h2>
-            <div class="gallery">
-                <div class="card"><img src="images.jpg" alt="Swarajya Mitra Mandal photo" loading="lazy" onclick="openLight(this)"><div class="caption">मंडळाचे चिन्ह</div></div>
-                <div class="card"><img src="images2.jpg" alt="Photo 1" loading="lazy" onclick="openLight(this)"><div class="caption">गेल्या वर्षाचे क्षण</div></div>
-            </div>
-        </section>
+        /\* contact + footer \*/
+        .contact{
+            margin-top:24px;
+            background:var(--card);
+            border-radius:12px;
+            padding:16px;
+            box-shadow:0 6px 16px rgba(10,10,10,.04);
+            opacity: 0;
+            animation: fadeIn 1s ease-out forwards;
+            animation-delay: 1.8s;
+        }
+        footer{
+            margin-top:32px;
+            padding:20px 16px;
+            text-align:center;
+            color:white;
+            background:linear-gradient(135deg,var(--primary),var(--primary-dark));
+            border-top-left-radius:15px;
+            border-top-right-radius:15px;
+            font-size:1rem;
+        }
 
-        <section id="mandala-adhikari">
-            <h2 style="margin:16px 0 10px;">मंडाळाचे कार्याधिकारी</h2>
-            <div class="gallery">
-                <div class="card">
-                    <img src="images4.jpeg" alt="आधारस्तंभ" loading="lazy" onclick="openLight(this)">
-                    <div class="caption">श्री.आधारस्तंभ</div>
-                </div>
-                <div class="card">
-                    <img src="images5.jpg" alt="अध्यक्ष" loading="lazy" onclick="openLight(this)">
-                    <div class="caption">श्री.अध्यक्ष</div>
-                </div>
-                <div class="card">
-                    <img src="images6.jpeg" alt="उपअध्यक्ष" loading="lazy" onclick="openLight(this)">
-                    <div class="caption">श्री.उपअध्यक्ष</div>
-                </div>
-                <div class="card">
-                    <img src="images7.jpeg" alt="खजिनदार" loading="lazy" onclick="openLight(this)">
-                    <div class="caption">श्री.खजिनदार</div>
-                </div>
-                 <div class="card">
-                    <img src="images8.jpeg" alt="कार्यकरता" loading="lazy" onclick="openLight(this)">
-                    <div class="caption">कार्यकरता</div>
-                     </div>
-                 <div class="card">
-                    <img src="images9.jpeg" alt="कार्यकरता" loading="lazy" onclick="openLight(this)">
-                    <div class="caption">कार्यकरता</div>
-            </div>
-                 <div class="card">
-                    <img src="images12.jpeg" alt="कार्यकरता" loading="lazy" onclick="openLight(this)">
-                    <div class="caption">कार्यकरता</div>
-            </div>
-           
-                 <div class="card">
-                    <img src="images11.jpeg" alt="कार्यकरता" loading="lazy" onclick="openLight(this)">
-                    <div class="caption">कार्यकरता</div>
-            </div>
-            </div>
-        </section>
+        /\* responsive tweaks \*/
+        @media (max-width:520px){
+            .logo{ width:100px; height:100px }
+            h1{ font-size:1.8rem }
+        }
 
-        <section id="events">
-            <h2 style="margin:16px 0 10px;">इव्हेंट्स</h2>
-            <div class="events">
-                <div class="event"><div class="date">28<br><small>ऑग</small></div><div class="detail"><strong>गणेशोत्सव 2025</strong><div style="color:var(--muted);margin-top:6px">उत्सव आणि समाजसेवा, सर्वांचे स्वागत आहे.</div></div></div>
-                <div class="event"><div class="date">19<br><small>फेब</small></div><div class="detail"><strong>शिवजयंती</strong><div style="color:var(--muted);margin-top:6px">शिवजयंती कार्यक्रम व सभासद भेट.</div></div></div>
-            </div>
-        </section>
+        /\* simple modal lightbox \*/
+        .lightbox{
+            position:fixed;
+            inset:0;
+            background:rgba(0,0,0,.85);
+            display:none;
+            align-items:center;
+            justify-content:center;
+            z-index:9999;
+            padding:20px;
+        }
+        .lightbox.open{ display:flex }
+        .lightbox img{ max-width:100%; max-height:92vh; border-radius:10px; box-shadow:0 18px 50px rgba(0,0,0,.5) }
+        .close-btn{
+            position:absolute; right:20px; top:20px; color:white; font-size:30px; cursor:pointer; font-weight:700;
+        }
+    \</style\>
 
-        <section id="contact" class="contact" style="margin-top:24px">
-            <h2>संपर्क</h2>
-            <p style="margin:6px 0">📍 नामदेव घुले नगर, गोपाळपट्टी, मंजरी बु.</p>
-            <p style="margin:6px 0">📞 +91 8483899213</p>
-            <p style="margin:6px 0">📸 Instagram: @swarajymitrmandal</p>
-        </section>
+\</head\>
+\<body\>
 
-        <footer>
-            © <span id="year"></span> स्वराज्य मित्र मंडळ · सर्व हक्क राखीव
-        </footer>
-    </main>
+    \<header\>
+        \<div class="logo-wrap"\>
+            \<img class="logo" src="favicon.ico.jpeg" alt="स्वराज्य मित्र मंडळ लोगो" onerror="this.style.display='none'"\>
+            \<h1\>|| स्वराज्य मित्र मंडळ ||\</h1\>
+            \<p class="sub"\>नामदेव घुले नगर, गोपाळपट्टी, मंजरी बु.\</p\>
+        \</div\>
+    \</header\>
 
-    <div id="light" class="lightbox" onclick="closeLight(event)">
-        <div class="close-btn" onclick="closeLight(event)">✕</div>
-        <img id="light-img" src="" alt="expanded">
-    </div>
+    \<nav\>
+        \<div class="nav-inner"\>
+            \<a href="\#about"\>आमच्याबद्दल\</a\>
+            \<a href="\#gallery"\>गॅलरी\</a\>
+            \<a href="\#mandala-adhikari"\>मंडाळाचे कार्याधिकारी\</a\>
+            \<a href="\#events"\>इव्हेंट्स\</a\>
+            \<a href="\#contact"\>संपर्क\</a\>
+        \</div\>
+    \</nav\>
 
-    <script>
-        // set year
-        document.getElementById('year').textContent = new Date().getFullYear();
+    \<main class="container"\>
+        \<section id="about" class="intro"\>
+            \<div style="flex:0 0 64px;"\>
+                \<div style="width:56px;height:56px;border-radius:10px;background:linear-gradient(180deg,var(--primary),var(--primary-dark));display:flex;align-items:center;justify-content:center;color:white;font-weight:700"\>SMM\</div\>
+            \</div\>
+            \<div class="text"\>
+                \<h2\>आमची ओळख\</h2\>
+                \<p\>“स्वराज्य मित्र मंडळ” हा आपल्या परिसरातील ऐक्य, सामाजिक कार्य आणि सांस्कृतिक जतनासाठी कार्यरत समुदाय आहे. आम्ही उत्सव, जनजागृती आणि सेवा उपक्रम आयोजित करतो. (स्थापना: 2015)\</p\>
+            \</div\>
+        \</section\>
 
-        // simple lightbox
-        function openLight(img){
-            const src = img.getAttribute('src');
-            const light = document.getElementById('light');
-            const lightImg = document.getElementById('light-img');
-            lightImg.src = src;
-            light.classList.add('open');
-        }
-        function closeLight(e){
-            // avoid closing when clicking image
-            if (e.target && e.target.id === 'light-img') return;
-            document.getElementById('light').classList.remove('open');
-        }
-    </script>
-</body>
-</html>
+        \<section id="gallery"\>
+            \<h2 style="margin:6px 0 10px;"\>गॅलरी\</h2\>
+            \<div class="gallery"\>
+                \<div class="card"\>\<img src="images.jpg" alt="Swarajya Mitra Mandal photo" loading="lazy" onclick="openLight(this)"\>\<div class="caption"\>मंडळाचे चिन्ह\</div\>\</div\>
+                \<div class="card"\>\<img src="images2.jpg" alt="Photo 1" loading="lazy" onclick="openLight(this)"\>\<div class="caption"\>गेल्या वर्षाचे क्षण\</div\>\</div\>
+            \</div\>
+        \</section\>
+
+        \<section id="mandala-adhikari"\>
+            \<h2 style="margin:16px 0 10px;"\>मंडाळाचे कार्याधिकारी\</h2\>
+            \<div class="gallery"\>
+                \<div class="card"\>
+                    \<img src="images4.jpeg" alt="आधारस्तंभ" loading="lazy" onclick="openLight(this)"\>
+                    \<div class="caption"\>श्री.आधारस्तंभ\</div\>
+                \</div\>
+                \<div class="card"\>
+                    \<img src="images5.jpg" alt="अध्यक्ष" loading="lazy" onclick="openLight(this)"\>
+                    \<div class="caption"\>श्री.अध्यक्ष\</div\>
+                \</div\>
+                \<div class="card"\>
+                    \<img src="images6.jpeg" alt="उपअध्यक्ष" loading="lazy" onclick="openLight(this)"\>
+                    \<div class="caption"\>श्री.उपअध्यक्ष\</div\>
+                \</div\>
+                \<div class="card"\>
+                    \<img src="images7.jpeg" alt="खजिनदार" loading="lazy" onclick="openLight(this)"\>
+                    \<div class="caption"\>श्री.खजिनदार\</div\>
+                \</div\>
+                 \<div class="card"\>
+                    \<img src="images8.jpeg" alt="कार्यकरता" loading="lazy" onclick="openLight(this)"\>
+                    \<div class="caption"\>कार्यकरता\</div\>
+                     \</div\>
+                 \<div class="card"\>
+                    \<img src="images9.jpeg" alt="कार्यकरता" loading="lazy" onclick="openLight(this)"\>
+                    \<div class="caption"\>कार्यकरता\</div\>
+            \</div\>
+                 \<div class="card"\>
+                    \<img src="images12.jpeg" alt="कार्यकरता" loading="lazy" onclick="openLight(this)"\>
+                    \<div class="caption"\>कार्यकरता\</div\>
+            \</div\>
+           
+                 \<div class="card"\>
+                    \<img src="images11.jpeg" alt="कार्यकरता" loading="lazy" onclick="openLight(this)"\>
+                    \<div class="caption"\>कार्यकरता\</div\>
+            \</div\>
+            \</div\>
+        \</section\>
+
+        \<section id="events"\>
+            \<h2 style="margin:16px 0 10px;"\>इव्हेंट्स\</h2\>
+            \<div class="events"\>
+                \<div class="event"\>\<div class="date"\>28\<br\>\<small\>ऑग\</small\>\</div\>\<div class="detail"\>\<strong\>गणेशोत्सव 2025\</strong\>\<div style="color:var(--muted);margin-top:6px"\>उत्सव आणि समाजसेवा, सर्वांचे स्वागत आहे.\</div\>\</div\>\</div\>
+                \<div class="event"\>\<div class="date"\>19\<br\>\<small\>फेब\</small\>\</div\>\<div class="detail"\>\<strong\>शिवजयंती\</strong\>\<div style="color:var(--muted);margin-top:6px"\>शिवजयंती कार्यक्रम व सभासद भेट.\</div\>\</div\>\</div\>
+            \</div\>
+        \</section\>
+
+        \<section id="contact" class="contact" style="margin-top:24px"\>
+            \<h2\>संपर्क\</h2\>
+            \<p style="margin:6px 0"\>📍 नामदेव घुले नगर, गोपाळपट्टी, मंजरी बु.\</p\>
+            \<p style="margin:6px 0"\>📞 +91 8483899213\</p\>
+            \<p style="margin:6px 0"\>📸 Instagram: @swarajymitrmandal\</p\>
+        \</section\>
+
+        \<footer\>
+            © \<span id="year"\>\</span\> स्वराज्य मित्र मंडळ · सर्व हक्क राखीव
+        \</footer\>
+    \</main\>
+
+    \<div id="light" class="lightbox" onclick="closeLight(event)"\>
+        \<div class="close-btn" onclick="closeLight(event)"\>✕\</div\>
+        \<img id="light-img" src="" alt="expanded"\>
+    \</div\>
+
+    \<script\>
+        // set year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // simple lightbox
+        function openLight(img){
+            const src = img.getAttribute('src');
+            const light = document.getElementById('light');
+            const lightImg = document.getElementById('light-img');
+            lightImg.src = src;
+            light.classList.add('open');
+        }
+        function closeLight(e){
+            // avoid closing when clicking image
+            if (e.target && e.target.id === 'light-img') return;
+            document.getElementById('light').classList.remove('open');
+        }
+    \</script\>
+
+\</body\>
+\</html\>
