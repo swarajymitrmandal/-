@@ -11,13 +11,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     
     <link rel="icon" href="favicon.ico" type="image/x-icon">
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
         :root{
             --primary:#e65100;
-            --primary-dark:#ff0000;
+            --primary-dark:#bf360c;
             --bg1:#e8f4f8;
             --bg2:#e1eef4;
             --card:#ffffff;
@@ -33,6 +32,7 @@
             -webkit-font-smoothing:antialiased;
             -moz-osx-font-smoothing:grayscale;
             line-height:1.6;
+            perspective: 1000px; /* ही नवीन ओळ 3D इफेक्टसाठी जोडली आहे */
         }
 
         /* ॲनिमेशनचा कोड */
@@ -84,7 +84,7 @@
 
         /* nav */
         nav{
-            background: #FF4500; /* मेनूचा रंग थोडा वेगळा केला आहे */
+            background: #FF4500;
             position:sticky;
             top:0;
             z-index:100;
@@ -111,7 +111,7 @@
             background:rgba(255,255,255,0.15);
             transform: scale(1.1); 
         }
-        .nav-inner a i { /* आयकॉन आणि टेक्स्टमध्ये जागा ठेवण्यासाठी */
+        .nav-inner a i {
             margin-right: 6px;
         }
 
@@ -168,7 +168,7 @@
             transition:transform .4s ease;
         }
         .card:hover{ 
-            transform:translateY(-8px) scale(1.02);
+            transform:translateY(-8px) scale(1.02) rotateY(15deg); /* इथे 3D ॲनिमेशन जोडले आहे */
             box-shadow:0 18px 40px rgba(10,10,10,.15); 
         }
         .card:hover img{ transform:scale(1.06) }
@@ -295,7 +295,7 @@
             <div class="gallery">
                 <div class="card"><img src="images.jpg" alt="Swarajya Mitra Mandal photo" loading="lazy" onclick="openLight(this)"><div class="caption">मंडळाचे चिन्ह</div></div>
                 <div class="card"><img src="images2.jpg" alt="Photo 1" loading="lazy" onclick="openLight(this)"><div class="caption">गेल्या वर्षाचे क्षण</div></div>
-               
+                <div class="card"><img src="images3.jpg" alt="Photo 2" loading="lazy" onclick="openLight(this)"><div class="caption">कार्यक्रमाची झलक</div></div>
             </div>
         </section>
 
@@ -304,36 +304,36 @@
             <div class="gallery">
                 <div class="card">
                     <img src="images4.jpeg" alt="आधारस्तंभ" loading="lazy" onclick="openLight(this)">
-                    <div class="caption">श्री.आधारस्तंभ</div>
+                    <div class="caption">प्रमुख आधारस्तंभ</div>
                 </div>
                 <div class="card">
                     <img src="images5.jpg" alt="अध्यक्ष" loading="lazy" onclick="openLight(this)">
-                    <div class="caption">श्री.अध्यक्ष</div>
+                    <div class="caption">अध्यक्ष</div>
                 </div>
                 <div class="card">
                     <img src="images6.jpeg" alt="उपअध्यक्ष" loading="lazy" onclick="openLight(this)">
-                    <div class="caption">श्री.उपअध्यक्ष</div>
+                    <div class="caption">उपाअध्यक्ष</div>
                 </div>
                 <div class="card">
                     <img src="images7.jpeg" alt="खजिनदार" loading="lazy" onclick="openLight(this)">
-                    <div class="caption">श्री.खजिनदार</div>
+                    <div class="caption">खजिनदार</div>
                 </div>
                 <div class="card">
-                    <img src="images8.jpeg" alt="कार्यकरता" loading="lazy" onclick="openLight(this)">
+                    <img src="images8.jpeg" alt="सदस्य" loading="lazy" onclick="openLight(this)">
                     <div class="caption">कार्यकरता</div>
                 </div>
                 <div class="card">
-                    <img src="images9.jpeg" alt="कार्यकरता" loading="lazy" onclick="openLight(this)">
-                    <div class="caption">कार्यकरता</div>
+                    <img src="images9.jpeg" alt="सदस्य" loading="lazy" onclick="openLight(this)">
+                    <div class="caption">सदस्य</div>
                 </div>
                 <div class="card">
-                    <img src="images12.jpeg" alt="कार्यकरता" loading="lazy" onclick="openLight(this)">
-                    <div class="caption">कार्यकरता</div>
+                    <img src="images12.jpeg" alt="सदस्य" loading="lazy" onclick="openLight(this)">
+                    <div class="caption">सदस्य</div>
                 </div>
                 
                 <div class="card">
-                    <img src="images11.jpeg" alt="कार्यकरता" loading="lazy" onclick="openLight(this)">
-                    <div class="caption">कार्यकरता</div>
+                    <img src="images11.jpeg" alt="सदस्य" loading="lazy" onclick="openLight(this)">
+                    <div class="caption">सदस्य</div>
                 </div>
             </div>
         </section>
