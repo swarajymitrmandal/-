@@ -257,6 +257,64 @@
         .close-btn{
             position:absolute; right:20px; top:20px; color:white; font-size:30px; cursor:pointer; font-weight:700;
         }
+        
+        /* ---------------------------------------------------- */
+        /* नवीन कोड: फोटो स्लाइडर साठी CSS */
+        .slider-section{
+            position: relative;
+            max-width: 980px;
+            margin: 32px auto;
+            padding: 0 16px;
+        }
+        .slider-container {
+            width: 100%;
+            height: 400px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 8px 22px rgba(10,10,10,.06);
+            opacity: 0;
+            animation: fadeIn 1s ease-out forwards;
+        }
+        .slider-image {
+            width: 100%;
+            height: 100%;
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            object-fit: cover;
+            transition: opacity 0.6s ease-in-out;
+            border-radius: 12px;
+        }
+        .slider-image.active {
+            display: block;
+            opacity: 1;
+        }
+        .slider-nav {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+            z-index: 10;
+            padding: 0 10px;
+        }
+        .prev, .next {
+            cursor: pointer;
+            color: white;
+            font-size: 24px;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 50%;
+            transition: background-color 0.3s;
+        }
+        .prev:hover, .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+        /* नवीन कोड इथे समाप्त होतो */
+        /* ---------------------------------------------------- */
     </style>
 </head>
 <body>
@@ -272,7 +330,7 @@
     <nav>
         <div class="nav-inner">
             <a href="#about"><i class="fas fa-info-circle"></i> आमच्याबद्दल</a>
-            <a href="#gallery"><i class="fas fa-images"></i> गॅलरी</a>
+            <a href="#slider-section"><i class="fas fa-images"></i> गॅलरी</a>
             <a href="#mandala-adhikari"><i class="fas fa-users"></i> मंडाळाचे कार्याधिकारी</a>
             <a href="#events"><i class="fas fa-calendar-alt"></i> इव्हेंट्स</a>
             <a href="#contact"><i class="fas fa-envelope"></i> संपर्क</a>
@@ -280,6 +338,18 @@
     </nav>
 
     <main class="container">
+        <section id="slider-section" class="slider-section">
+            <div class="slider-container">
+                <img class="slider-image active" src="images.jpg" alt="Photo 1">
+                <img class="slider-image" src="images2.jpg" alt="Photo 2">
+                <img class="slider-image" src="images3.jpg" alt="Photo 3">
+                <img class="slider-image" src="images4.jpeg" alt="Photo 4">
+            </div>
+            <div class="slider-nav">
+                <span class="prev" onclick="changeSlide(-1)">&#10094;</span>
+                <span class="next" onclick="changeSlide(1)">&#10095;</span>
+            </div>
+        </section>
         <section id="about" class="intro">
             <div style="flex:0 0 64px;">
                 <div style="width:56px;height:56px;border-radius:10px;background:linear-gradient(180deg,var(--primary),var(--primary-dark));display:flex;align-items:center;justify-content:center;color:white;font-weight:700">SMM</div>
@@ -301,7 +371,6 @@
             <div class="gallery">
                 <div class="card"><img src="images.jpg" alt="Swarajya Mitra Mandal photo" loading="lazy" onclick="openLight(this)"><div class="caption">मंडळाचे चिन्ह</div></div>
                 <div class="card"><img src="images2.jpg" alt="Photo 1" loading="lazy" onclick="openLight(this)"><div class="caption">गेल्या वर्षाचे क्षण</div></div>
-              
             </div>
         </section>
 
@@ -386,6 +455,48 @@
             if (e.target && e.target.id === 'light-img') return;
             document.getElementById('light').classList.remove('open');
         }
+
+        /* ---------------------------------------------------- */
+        /* नवीन कोड: फोटो स्लाइडर साठी JavaScript */
+        let slideIndex = 0;
+        const slides = document.getElementsByClassName("slider-image");
+        const intervalTime = 4000; // 4 सेकंद
+
+        function showSlides() {
+            let i;
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {
+                slideIndex = 1;
+            }
+            slides[slideIndex - 1].style.display = "block";
+            setTimeout(showSlides, intervalTime);
+        }
+
+        function changeSlide(n) {
+            slideIndex += n - 1; // +1 or -1
+            if (slideIndex >= slides.length) {
+                slideIndex = 0;
+            } else if (slideIndex < 0) {
+                slideIndex = slides.length - 1;
+            }
+            showSpecificSlide(slideIndex);
+        }
+
+        function showSpecificSlide(index) {
+            let i;
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slides[index].style.display = "block";
+        }
+
+        // Start the slider
+        showSlides();
+        /* नवीन कोड इथे समाप्त होतो */
+        /* ---------------------------------------------------- */
     </script>
 </body>
 </html>
